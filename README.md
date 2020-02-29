@@ -36,7 +36,7 @@ First, open `config.s` in a text editor to customize it.
 
 Tweak the definition of `free_space` to be where you want the code inserted.
 
-Update `move_data` as needed.
+Update `move_data` and `move_descriptions` as needed.
 
 This hack also supports [Zeturic's Unhidden Power](https://github.com/Zeturic/unhidden-power).
 
