@@ -160,7 +160,7 @@ display_icons_tm_case_titles:
     mov r3, #0
     bl draw_type_icon
     mov r0, #5
-    mov r1, #0x18
+    mov r1, #0x19
     mov r2, #0
     mov r3, #0xC
     bl draw_type_icon
@@ -244,7 +244,7 @@ display_icons_summary_screen:
     pop {r0}
     add r1, #CATEGORY_ICONS
     add r3, #12
-    mov r2, #0x3
+    mov r2, #3
     bl draw_type_icon
     pop {r0-r4}
     ldr r1, =0x0203B140
@@ -273,7 +273,7 @@ display_icons_summary_screen:
     pop {r0}
     add r1, #CATEGORY_ICONS
     mov r3, #129
-    mov r2, #0x3
+    mov r2, #3
     bl draw_type_icon
     pop {r0-r4}
 skip_fifth_move:
