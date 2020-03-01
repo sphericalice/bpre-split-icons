@@ -46,9 +46,9 @@ Update `move_data` and `move_descriptions` as needed.
 
 This hack also supports [Zeturic's Unhidden Power](https://github.com/Zeturic/unhidden-power).
 
-If wish to enable this support, change `unhidden-power` from `false` to `true` in `config.s`.
+If you wish to enable this support, change `unhidden-power` from `false` to `true` in `config.s`.
 
-Then, set the label `hp_type_decode_addr` to the address (NOT +1) of that routine.
+Then, set the label `hp_type_decode_addr` to the address (NOT +1) of the routine with the same name from the Unhidden Power repository.
 
 You'll need to have [armips](https://github.com/Kingcom/armips).
 
