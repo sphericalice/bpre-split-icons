@@ -1,5 +1,9 @@
 ### Split Icons
 
+![](battle.png)
+![](summary.png)
+![](relearner.png)
+
 This repository is a combination of small routines which shows the category icon for a move under the Physical Special Split in relevant UIs, such as the TM Case, Move Reminder, a Pokémon's move summary screen, and in battle.
 
 #### Assumptions this hack makes
