@@ -57,7 +57,7 @@ display_icons_battle_sel_move:
     lsr r4, r0, #0x18
 .endif
 @@not_hidden_power:
-    mov r0, #0x70
+    mov r0, #0xA0
     mov r1, #1
     bl load_type_icon_pals
     mov r0, #8
@@ -402,7 +402,7 @@ get_move_id_from_tm_nr:
 
 // change palette of Type/NORMAL window from 05 to 07 so we can use the type icon graphics here
 .org 0x08248375
-    .byte 0x07
+    .byte 0x0A
 
 // change windows for the move relearner
 .org 0x083FFA44
