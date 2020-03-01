@@ -217,6 +217,70 @@ display_icons_tm_case:
     bx r0
 .pool
 
+display_icons_summary_screen:
+    mov r2, #0xA0
+    lsl r2, r2, #0x0B
+    add r3, r3, r2
+    lsr r3, r3, #0x10
+    mov r2, #0x3
+    push {r0-r4}
+    bl draw_type_icon
+    pop {r0-r4}
+    push {r0-r4}
+    ldr r2, =0x0203B140
+    ldr r2, [r2]
+    lsl r1, r4, #1
+    push {r0}
+    ldr r0, =0x3258
+    add r2, r2, r0
+    add r2, r2, r1
+    ldrh r1, [r2]
+    ldr r2, =(rom + move_data)
+    lsl r0, r1, #1
+    add r0, r0, r1
+    lsl r0, r0, #2
+    add r0, r0, r2
+    ldrb r1, [r0, #10]
+    pop {r0}
+    add r1, #CATEGORY_ICONS
+    add r3, #12
+    mov r2, #0x3
+    bl draw_type_icon
+    pop {r0-r4}
+    ldr r1, =0x0203B140
+    ldr r1, [r1]
+    ldr r3, =0x3208
+    add r1, r1, r3
+    ldrb r1, [r1]
+    cmp r1, #2
+    bne skip_fifth_move
+    push {r0-r4}
+    ldr r2, =0x0203B140
+    ldr r2, [r2]
+    mov r1, #4
+    lsl r1, r1, #1
+    push {r0}
+    ldr r0, =0x3258
+    add r2, r2, r0
+    add r2, r2, r1
+    ldrh r1, [r2]
+    ldr r2, =(rom + move_data)
+    lsl r0, r1, #1
+    add r0, r0, r1
+    lsl r0, r0, #2
+    add r0, r0, r2
+    ldrb r1, [r0, #10]
+    pop {r0}
+    add r1, #CATEGORY_ICONS
+    mov r3, #129
+    mov r2, #0x3
+    bl draw_type_icon
+    pop {r0-r4}
+skip_fifth_move:
+    ldr r0, =(rom + 0x137CDE |1)
+    bx r0
+.pool
+
 rboxid_upload_a:
     ldr r2, =(rom + 0x3F20 |1)
     bx r2
@@ -330,6 +394,11 @@ get_move_id_from_tm_nr:
     .byte 0x19
 .org 0x0813358c
     .byte 0x3e
+
+.org 0x08137CD0
+    ldr r2, =display_icons_summary_screen |1
+    bx r2
+.pool
 
 // change palette of Type/NORMAL window from 05 to 07 so we can use the type icon graphics here
 .org 0x08248375
